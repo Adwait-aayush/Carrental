@@ -1,9 +1,9 @@
-FROM golang:1.23.4-alpine as build
+FROM golang:1.21-alpine as build
 WORKDIR /app
 COPY . .
-RUN go build -o /carental .
-FROM scratch
+RUN go build -o /carrental .
+FROM alpine:latest
 
-COPY --from=build /carental /carental
+COPY --from=build /carrental /carrental
 EXPOSE 8080
-CMD [ "/carental" ]
+CMD [ "/carrental" ]
