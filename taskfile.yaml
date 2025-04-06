@@ -1,0 +1,11 @@
+version: '3'
+
+tasks:
+  start:
+    desc: Run the application
+    cmds:
+      - docker compose -f docker-compose.yml  up
+  stop:
+    desc: Stop the application
+    cmds:
+      - docker compose -f docker-compose.yml  down
