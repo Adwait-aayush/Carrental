@@ -9,3 +9,16 @@ tasks:
     desc: Stop the application
     cmds:
       - docker compose -f docker-compose.yml  down
+  gen-query:
+    desc: Generate Golang compatible Code
+    cmds:
+      - sqlc generate
+
+  mig-gen:
+    desc: Generate migration file
+    cmds:
+      - atlas migrate diff --env local
+  mig-apply:
+    desc: Apply migration file
+    cmds:
+      - atlas migrate apply --env local
